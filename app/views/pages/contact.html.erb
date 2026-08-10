@@ -1,0 +1,24 @@
+<h1>contact page</h1>
+
+<ul>
+    <% @team.each do |member| %>
+        <li><%= member %></li>
+    <% end %>
+</ul>
+
+<a href="/contact">ANCHOR_TEXT</a><br>
+<%= link_to "Home page", root_path%><br>
+<%= link_to "About us", about_path%><br>
+
+
+<form action="/contact" method="get">
+  <label for="member">Who are you looking for?</label>
+  <input 
+    type="text" 
+    id="member" 
+    name="member" 
+    value="<%= params[:member] %>"
+    placeholder="e.g. John Smith"
+    >
+  <input type="submit" value="Search">
+</form>
